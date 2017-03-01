@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="33m-bG-32Y">
-    <device id="retina4_7" orientation="portrait">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="33m-bG-32Y">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,14 +20,590 @@
                         <viewControllerLayoutGuide type="bottom" id="Rkb-O3-rip"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xKS-yl-l6T">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWi-2a-6IO">
+                                <rect key="frame" x="115" y="482" width="90" height="41"/>
+                                <color key="backgroundColor" red="0.11048637753461618" green="0.67658253202564111" blue="0.02497774543025183" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="Esm-ub-jQw"/>
+                                    <constraint firstAttribute="width" constant="90" id="jdS-mO-45w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="Guess">
+                                    <color key="titleColor" red="0.96752459120000001" green="1" blue="0.92970847649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="guessWasPressed:" destination="33m-bG-32Y" eventType="touchUpInside" id="Q2b-aP-b7f"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman1" translatesAutoresizingMaskIntoConstraints="NO" id="p93-JT-pZg">
+                                <rect key="frame" x="76" y="20" width="168" height="168"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="p93-JT-pZg" secondAttribute="height" multiplier="1:1" id="Qh1-x7-pxm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8I-PO-EBG">
+                                <rect key="frame" x="26" y="203" width="268" height="60"/>
+                                <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="wfg-yv-swL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Guesses: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Txe-JS-2FC">
+                                <rect key="frame" x="26" y="273" width="268" height="23.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23.5" id="Sal-Qd-Y8k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxG-K7-pIt">
+                                <rect key="frame" x="65.5" y="438" width="31.5" height="36"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="v">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="Rd6-JM-ZEP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFj-eu-sQ8">
+                                <rect key="frame" x="26" y="393.5" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="o">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="QI4-7t-i9E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uu-lg-FDe">
+                                <rect key="frame" x="65.5" y="393.5" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="p">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="xMb-VU-7gK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3P-v8-asE">
+                                <rect key="frame" x="105" y="393.5" width="31" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="q">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="BOz-ya-eqT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOs-eo-ysl">
+                                <rect key="frame" x="145" y="393.5" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="r">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="Ufx-Jt-0mI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJa-EQ-N7t">
+                                <rect key="frame" x="184.5" y="393.5" width="31" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="s">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="e84-6e-aof"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBT-io-xSp">
+                                <rect key="frame" x="223" y="393.5" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="t">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="Ywm-Bm-RfB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rls-c7-nHq">
+                                <rect key="frame" x="262.5" y="393.5" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="u">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="uuc-1c-CBQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSe-g8-K5I">
+                                <rect key="frame" x="26" y="349" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="h">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="YXz-ho-TQQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdw-jZ-Y0z">
+                                <rect key="frame" x="65.5" y="349" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="i">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="Ysp-Jf-SZ9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3W-2c-yZs">
+                                <rect key="frame" x="105" y="349" width="32" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="j">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="Jmf-8c-Nc8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdN-Lb-GDW">
+                                <rect key="frame" x="145" y="349" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="k">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="0M9-S0-DZD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgd-eF-RLh">
+                                <rect key="frame" x="184.5" y="349" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="l">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="jlS-l9-2oi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5k0-np-SrC">
+                                <rect key="frame" x="223.5" y="349" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="m">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="kB8-WG-hWD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwB-Yt-iXp">
+                                <rect key="frame" x="263" y="349" width="31" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="n">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="RfE-4O-i3R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hP6-GS-8UL">
+                                <rect key="frame" x="26" y="304.5" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="a">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="q7d-v6-Bac"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-le-EQK">
+                                <rect key="frame" x="65.5" y="304.5" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="b">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="a0N-Xe-EQp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUg-1Q-1f4">
+                                <rect key="frame" x="105" y="305" width="32" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="c">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="YbQ-iS-J1N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6i-eQ-6pj">
+                                <rect key="frame" x="145" y="304.5" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="d">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="ekf-5m-LbU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hey-mI-MTm">
+                                <rect key="frame" x="184.5" y="304.5" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="e">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="Hkf-kW-WOD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujy-GR-sES">
+                                <rect key="frame" x="223.5" y="305" width="31.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="f">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="DPX-Y8-gfJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4o-a9-scr">
+                                <rect key="frame" x="263" y="305" width="31" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="g">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="SR9-YN-1zL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQH-uA-qli">
+                                <rect key="frame" x="105" y="438" width="31" height="36"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="w">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="PhM-z0-3zM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZC7-T9-cJm">
+                                <rect key="frame" x="145" y="438" width="31.5" height="36"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="x">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="g8L-4x-SaC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNp-1o-ysr">
+                                <rect key="frame" x="184.5" y="438" width="31" height="36"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="y">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="JBD-vQ-9HL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDu-xf-8T4">
+                                <rect key="frame" x="223" y="438" width="31.5" height="36"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                                <state key="normal" title="z">
+                                    <color key="titleColor" red="0.96493542489999995" green="1" blue="0.95858341629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letterWasSelected:" destination="33m-bG-32Y" eventType="touchUpInside" id="owQ-iT-Td7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13086939102564099" green="0.13086939102564099" blue="0.13086939102564099" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hP6-GS-8UL" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="10" id="05X-yp-rN5"/>
+                            <constraint firstItem="n4o-a9-scr" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="0B1-4f-S5T"/>
+                            <constraint firstItem="g6i-eQ-6pj" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="0YG-7y-8Gc"/>
+                            <constraint firstItem="vFj-eu-sQ8" firstAttribute="centerY" secondItem="V3P-v8-asE" secondAttribute="centerY" id="0bn-A4-9pA"/>
+                            <constraint firstItem="6uu-lg-FDe" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="0h4-Lb-TfP"/>
+                            <constraint firstItem="Rdw-jZ-Y0z" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="0l7-Uz-pbE"/>
+                            <constraint firstItem="dNp-1o-ysr" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="24T-Le-68E"/>
+                            <constraint firstItem="KBT-io-xSp" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="2YP-wh-diU"/>
+                            <constraint firstItem="g6i-eQ-6pj" firstAttribute="centerX" secondItem="AOs-eo-ysl" secondAttribute="centerX" id="2yr-vK-CaF"/>
+                            <constraint firstItem="Q8I-PO-EBG" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="10" id="3wp-sd-1VL"/>
+                            <constraint firstItem="5k0-np-SrC" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="4g1-kZ-5gt"/>
+                            <constraint firstItem="Hey-mI-MTm" firstAttribute="centerX" secondItem="cgd-eF-RLh" secondAttribute="centerX" id="5Uk-Ii-Dns"/>
+                            <constraint firstItem="g6i-eQ-6pj" firstAttribute="centerX" secondItem="qdN-Lb-GDW" secondAttribute="centerX" id="5aA-Xf-xsm"/>
+                            <constraint firstItem="WUg-1Q-1f4" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="5eQ-4T-pRz"/>
+                            <constraint firstItem="Rls-c7-nHq" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="5mE-pi-B9K"/>
+                            <constraint firstItem="Ujy-GR-sES" firstAttribute="leading" secondItem="Hey-mI-MTm" secondAttribute="trailing" constant="8" symbolic="YES" id="66d-60-Z3P"/>
+                            <constraint firstItem="hP6-GS-8UL" firstAttribute="centerY" secondItem="WUg-1Q-1f4" secondAttribute="centerY" id="8aq-rG-0hi"/>
+                            <constraint firstItem="lxG-K7-pIt" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="9gM-5O-bcu"/>
+                            <constraint firstItem="qdN-Lb-GDW" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="Aph-Z3-g9i"/>
+                            <constraint firstItem="vFj-eu-sQ8" firstAttribute="centerY" secondItem="6uu-lg-FDe" secondAttribute="centerY" id="B4W-XG-bWT"/>
+                            <constraint firstItem="lxG-K7-pIt" firstAttribute="centerY" secondItem="xQH-uA-qli" secondAttribute="centerY" id="B55-s4-dUE"/>
+                            <constraint firstItem="vaA-le-EQK" firstAttribute="centerX" secondItem="lxG-K7-pIt" secondAttribute="centerX" id="BCl-vs-Apv"/>
+                            <constraint firstItem="wSe-g8-K5I" firstAttribute="top" secondItem="hP6-GS-8UL" secondAttribute="bottom" constant="8" symbolic="YES" id="Bik-hp-bgN"/>
+                            <constraint firstItem="V3P-v8-asE" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="CHy-IR-S1k"/>
+                            <constraint firstItem="Txe-JS-2FC" firstAttribute="centerX" secondItem="xKS-yl-l6T" secondAttribute="centerX" id="E4H-7G-X60"/>
+                            <constraint firstItem="wSe-g8-K5I" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="EMl-dJ-gvk"/>
+                            <constraint firstItem="wSe-g8-K5I" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="EUw-iR-L7n"/>
+                            <constraint firstItem="Hey-mI-MTm" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="EVD-TL-gTP"/>
+                            <constraint firstItem="lxG-K7-pIt" firstAttribute="centerY" secondItem="ZC7-T9-cJm" secondAttribute="centerY" id="F34-WM-iXu"/>
+                            <constraint firstItem="Rkb-O3-rip" firstAttribute="top" secondItem="rWi-2a-6IO" secondAttribute="bottom" constant="45" id="FLR-a3-wCc"/>
+                            <constraint firstItem="hP6-GS-8UL" firstAttribute="top" secondItem="Txe-JS-2FC" secondAttribute="bottom" constant="8" symbolic="YES" id="FRL-Tz-QNy"/>
+                            <constraint firstItem="Ujy-GR-sES" firstAttribute="centerX" secondItem="5k0-np-SrC" secondAttribute="centerX" id="GRg-Mo-5dL"/>
+                            <constraint firstItem="AOs-eo-ysl" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="IJ3-iJ-fi3"/>
+                            <constraint firstItem="Q8I-PO-EBG" firstAttribute="centerX" secondItem="xKS-yl-l6T" secondAttribute="centerX" id="Ibe-VP-XiK"/>
+                            <constraint firstItem="vFj-eu-sQ8" firstAttribute="centerY" secondItem="KBT-io-xSp" secondAttribute="centerY" id="Iuk-nI-Zaz"/>
+                            <constraint firstItem="lxG-K7-pIt" firstAttribute="centerY" secondItem="mDu-xf-8T4" secondAttribute="centerY" id="JyT-jn-1me"/>
+                            <constraint firstItem="vaA-le-EQK" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="K4y-Cv-CKc"/>
+                            <constraint firstItem="xQH-uA-qli" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="KCT-d1-eWc"/>
+                            <constraint firstItem="vFj-eu-sQ8" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="KPg-q8-uAC"/>
+                            <constraint firstItem="n4o-a9-scr" firstAttribute="centerX" secondItem="Rls-c7-nHq" secondAttribute="centerX" id="Kpj-OW-XJx"/>
+                            <constraint firstItem="Ujy-GR-sES" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="Lpf-7c-oEd"/>
+                            <constraint firstItem="WUg-1Q-1f4" firstAttribute="leading" secondItem="vaA-le-EQK" secondAttribute="trailing" constant="8" symbolic="YES" id="LyQ-9d-duR"/>
+                            <constraint firstItem="Hey-mI-MTm" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="MNN-xW-BRg"/>
+                            <constraint firstItem="lxG-K7-pIt" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="MdW-ap-RiW"/>
+                            <constraint firstItem="mDu-xf-8T4" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="MrS-cz-2t6"/>
+                            <constraint firstItem="Txe-JS-2FC" firstAttribute="top" secondItem="Q8I-PO-EBG" secondAttribute="bottom" constant="10" id="MzB-iN-4Dz"/>
+                            <constraint firstItem="hP6-GS-8UL" firstAttribute="centerY" secondItem="n4o-a9-scr" secondAttribute="centerY" id="Nd5-Kx-Uva"/>
+                            <constraint firstItem="pwB-Yt-iXp" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="Np3-GL-C84"/>
+                            <constraint firstItem="6uu-lg-FDe" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="NpE-Xo-TGP"/>
+                            <constraint firstItem="n4o-a9-scr" firstAttribute="trailing" secondItem="Rls-c7-nHq" secondAttribute="trailing" id="Opw-ov-DG8"/>
+                            <constraint firstItem="WUg-1Q-1f4" firstAttribute="centerX" secondItem="xQH-uA-qli" secondAttribute="centerX" id="OyA-XI-bai"/>
+                            <constraint firstItem="Ujy-GR-sES" firstAttribute="centerX" secondItem="mDu-xf-8T4" secondAttribute="centerX" id="PEK-D2-kjK"/>
+                            <constraint firstItem="vFj-eu-sQ8" firstAttribute="centerY" secondItem="AOs-eo-ysl" secondAttribute="centerY" id="PfT-Dx-ENZ"/>
+                            <constraint firstItem="wSe-g8-K5I" firstAttribute="centerY" secondItem="5k0-np-SrC" secondAttribute="centerY" id="Q8e-aZ-rd2"/>
+                            <constraint firstItem="Hey-mI-MTm" firstAttribute="leading" secondItem="g6i-eQ-6pj" secondAttribute="trailing" constant="8" symbolic="YES" id="QhR-Iy-NUL"/>
+                            <constraint firstItem="rWi-2a-6IO" firstAttribute="top" secondItem="lxG-K7-pIt" secondAttribute="bottom" constant="8" symbolic="YES" id="R5V-BA-tqd"/>
+                            <constraint firstItem="g6i-eQ-6pj" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="RIe-Z7-AnE"/>
+                            <constraint firstItem="n4o-a9-scr" firstAttribute="leading" secondItem="Ujy-GR-sES" secondAttribute="trailing" constant="8" symbolic="YES" id="S0f-oK-Ivn"/>
+                            <constraint firstItem="vFj-eu-sQ8" firstAttribute="centerY" secondItem="Rls-c7-nHq" secondAttribute="centerY" id="S13-lZ-G5d"/>
+                            <constraint firstItem="pwB-Yt-iXp" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="S9i-RI-gQ8"/>
+                            <constraint firstItem="g3W-2c-yZs" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="Sy6-I8-eH1"/>
+                            <constraint firstItem="wSe-g8-K5I" firstAttribute="centerY" secondItem="g3W-2c-yZs" secondAttribute="centerY" id="TM9-gp-j7Z"/>
+                            <constraint firstItem="rWi-2a-6IO" firstAttribute="centerX" secondItem="xKS-yl-l6T" secondAttribute="centerX" id="TPY-Uh-qdk"/>
+                            <constraint firstItem="Txe-JS-2FC" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="10" id="U3z-9K-0Wv"/>
+                            <constraint firstItem="Hey-mI-MTm" firstAttribute="centerX" secondItem="dNp-1o-ysr" secondAttribute="centerX" id="V3T-Bk-98b"/>
+                            <constraint firstItem="cgd-eF-RLh" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="WGH-y7-ZcA"/>
+                            <constraint firstItem="wSe-g8-K5I" firstAttribute="centerY" secondItem="qdN-Lb-GDW" secondAttribute="centerY" id="WWr-WW-Dtv"/>
+                            <constraint firstItem="mDu-xf-8T4" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="XbG-w7-bMK"/>
+                            <constraint firstItem="hP6-GS-8UL" firstAttribute="centerY" secondItem="Hey-mI-MTm" secondAttribute="centerY" id="Zj4-0X-kYw"/>
+                            <constraint firstItem="KBT-io-xSp" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="a0g-Lq-LjI"/>
+                            <constraint firstItem="dNp-1o-ysr" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="a1l-Vp-Afk"/>
+                            <constraint firstItem="g6i-eQ-6pj" firstAttribute="leading" secondItem="WUg-1Q-1f4" secondAttribute="trailing" constant="8" symbolic="YES" id="aJQ-qF-Xym"/>
+                            <constraint firstItem="Rdw-jZ-Y0z" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="bt9-qI-Ipo"/>
+                            <constraint firstItem="Rls-c7-nHq" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="coT-Fn-XN3"/>
+                            <constraint firstItem="wSe-g8-K5I" firstAttribute="centerY" secondItem="Rdw-jZ-Y0z" secondAttribute="centerY" id="d0K-xo-3wS"/>
+                            <constraint firstItem="p93-JT-pZg" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="60" id="d3M-Is-afu"/>
+                            <constraint firstItem="pwB-Yt-iXp" firstAttribute="trailing" secondItem="n4o-a9-scr" secondAttribute="trailing" id="d3R-6p-Pcc"/>
+                            <constraint firstItem="wSe-g8-K5I" firstAttribute="centerY" secondItem="cgd-eF-RLh" secondAttribute="centerY" id="dOd-hd-b7V"/>
+                            <constraint firstItem="lxG-K7-pIt" firstAttribute="centerY" secondItem="dNp-1o-ysr" secondAttribute="centerY" id="dSM-eO-Odt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n4o-a9-scr" secondAttribute="trailing" constant="10" id="dhV-Gb-W2R"/>
+                            <constraint firstItem="g3W-2c-yZs" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="e9z-L4-cc3"/>
+                            <constraint firstItem="kJa-EQ-N7t" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="eHn-gz-VPr"/>
+                            <constraint firstItem="vaA-le-EQK" firstAttribute="centerX" secondItem="Rdw-jZ-Y0z" secondAttribute="centerX" id="eMv-Xa-AK1"/>
+                            <constraint firstItem="hP6-GS-8UL" firstAttribute="centerY" secondItem="Ujy-GR-sES" secondAttribute="centerY" id="eSq-xa-JdI"/>
+                            <constraint firstItem="WUg-1Q-1f4" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="eUx-y6-dFE"/>
+                            <constraint firstItem="p93-JT-pZg" firstAttribute="centerX" secondItem="xKS-yl-l6T" secondAttribute="centerX" id="fEh-05-FXv"/>
+                            <constraint firstItem="Q8I-PO-EBG" firstAttribute="top" secondItem="p93-JT-pZg" secondAttribute="bottom" constant="15" id="fck-Um-wnd"/>
+                            <constraint firstItem="V3P-v8-asE" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="fhp-Y9-47e"/>
+                            <constraint firstItem="vaA-le-EQK" firstAttribute="centerX" secondItem="6uu-lg-FDe" secondAttribute="centerX" id="fxT-qy-xdI"/>
+                            <constraint firstItem="qdN-Lb-GDW" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="gef-zk-9Aj"/>
+                            <constraint firstItem="vaA-le-EQK" firstAttribute="leading" secondItem="hP6-GS-8UL" secondAttribute="trailing" constant="8" symbolic="YES" id="grF-Tl-OFS"/>
+                            <constraint firstItem="g6i-eQ-6pj" firstAttribute="centerX" secondItem="ZC7-T9-cJm" secondAttribute="centerX" id="gym-0E-er9"/>
+                            <constraint firstItem="hP6-GS-8UL" firstAttribute="leading" secondItem="vFj-eu-sQ8" secondAttribute="leading" id="h7Z-B8-M6d"/>
+                            <constraint firstItem="wSe-g8-K5I" firstAttribute="centerY" secondItem="pwB-Yt-iXp" secondAttribute="centerY" id="hFG-PR-VFD"/>
+                            <constraint firstItem="xQH-uA-qli" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="hcf-er-8Ag"/>
+                            <constraint firstItem="hP6-GS-8UL" firstAttribute="leading" secondItem="wSe-g8-K5I" secondAttribute="leading" id="hpu-s9-3vB"/>
+                            <constraint firstItem="Hey-mI-MTm" firstAttribute="centerX" secondItem="kJa-EQ-N7t" secondAttribute="centerX" id="hzA-7z-FAe"/>
+                            <constraint firstItem="n4o-a9-scr" firstAttribute="centerX" secondItem="pwB-Yt-iXp" secondAttribute="centerX" id="i2B-6X-Jtn"/>
+                            <constraint firstItem="lxG-K7-pIt" firstAttribute="top" secondItem="6uu-lg-FDe" secondAttribute="bottom" constant="8" symbolic="YES" id="iXg-eV-Rj2"/>
+                            <constraint firstItem="WUg-1Q-1f4" firstAttribute="centerX" secondItem="V3P-v8-asE" secondAttribute="centerX" id="ixs-Xy-sbr"/>
+                            <constraint firstItem="Ujy-GR-sES" firstAttribute="centerX" secondItem="KBT-io-xSp" secondAttribute="centerX" id="j9K-Cp-ZlZ"/>
+                            <constraint firstItem="n4o-a9-scr" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="jQk-Ij-7mI"/>
+                            <constraint firstItem="kJa-EQ-N7t" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="lNo-eD-Fsf"/>
+                            <constraint firstItem="vaA-le-EQK" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="nJ2-V8-dMl"/>
+                            <constraint firstItem="WUg-1Q-1f4" firstAttribute="centerX" secondItem="g3W-2c-yZs" secondAttribute="centerX" id="nw4-Ye-4bF"/>
+                            <constraint firstItem="vFj-eu-sQ8" firstAttribute="centerY" secondItem="kJa-EQ-N7t" secondAttribute="centerY" id="pbC-ph-BM5"/>
+                            <constraint firstItem="5k0-np-SrC" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="raP-Am-YAM"/>
+                            <constraint firstItem="vFj-eu-sQ8" firstAttribute="top" secondItem="wSe-g8-K5I" secondAttribute="bottom" constant="8" symbolic="YES" id="s4I-aF-Ucq"/>
+                            <constraint firstItem="cgd-eF-RLh" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="sQL-hz-Cg7"/>
+                            <constraint firstItem="ZC7-T9-cJm" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="sUT-Hd-aoa"/>
+                            <constraint firstItem="AOs-eo-ysl" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="tAB-Ue-p0F"/>
+                            <constraint firstItem="vFj-eu-sQ8" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="wEe-3U-ZnF"/>
+                            <constraint firstItem="hP6-GS-8UL" firstAttribute="centerY" secondItem="g6i-eQ-6pj" secondAttribute="centerY" id="x5e-9D-kLi"/>
+                            <constraint firstItem="ZC7-T9-cJm" firstAttribute="width" secondItem="hP6-GS-8UL" secondAttribute="width" id="xet-Ck-934"/>
+                            <constraint firstItem="Ujy-GR-sES" firstAttribute="height" secondItem="hP6-GS-8UL" secondAttribute="height" id="yCx-iZ-RBG"/>
+                            <constraint firstItem="hP6-GS-8UL" firstAttribute="centerY" secondItem="vaA-le-EQK" secondAttribute="centerY" id="zOb-eO-w6e"/>
+                            <constraint firstItem="p93-JT-pZg" firstAttribute="top" secondItem="fga-sG-nzY" secondAttribute="bottom" id="zuC-O4-J3e"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gallows" destination="p93-JT-pZg" id="Ke6-6y-QtN"/>
+                        <outlet property="phraseSpace" destination="Q8I-PO-EBG" id="bB0-2n-E1E"/>
+                        <outlet property="wrongsSpace" destination="Txe-JS-2FC" id="HNt-be-hoZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJo-zA-LYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="652" y="-133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hangman1" width="175" height="176"/>
+    </resources>
 </document>
